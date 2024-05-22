@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Nunito } from "next/font/google"
 import { Navbar } from "./components/navbar/Navbar";
+import RegisterModal from "./components/Modals/RegisterModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <Navbar/>
+        <RegisterModal/>
         {children}
         </body>
     </html>
