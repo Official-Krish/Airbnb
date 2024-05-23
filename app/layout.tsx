@@ -6,6 +6,7 @@ import { Navbar } from "./components/navbar/Navbar";
 import RegisterModal from "./components/Modals/RegisterModal";
 import LoginModal from "./components/Modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
+import { RentModal } from "./components/Modals/RentModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default async function RootLayout({
         <Navbar currentUser={currentUser}/>
         <RegisterModal/>
         <LoginModal/>
+        <RentModal/>
         {children}
         </body>
     </html>
