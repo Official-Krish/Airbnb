@@ -102,6 +102,10 @@ export const RentModal = () => {
         if(step != STEPS.PRICE){
             return onNext();
         }
+        if (!data.imageSrc) {
+            alert("Image is required.");
+            return;
+          }
         setisLoading(true);
 
         axios.post("/api/listings", data)
@@ -180,6 +184,10 @@ export const RentModal = () => {
           <div className="flex flex-col gap-8">
             <Heading title="Add a photo of your place" subtitle="Show guests what your place looks like!" />
             <ImageUpload value={imageSrc} onChange={(value) => setCustomValue('imageSrc', value)} />
+            {imageSrc && (  // Check if imageSrc has a value before rendering the image
+            <img src={imageSrc} alt="Preview of uploaded image" />
+            )}
+            {!imageSrc && <p>No image uploaded yet.</p>}
           </div>
         );
     }
