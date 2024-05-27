@@ -63,8 +63,8 @@ export const UserMenu : React.FC<userMenuProps> = ({
                               label="My trips"
                             />
                             <MenuItem
-                              onClick={() => {}}
-                              label="My favourits"
+                              onClick={() => router.push("/favorites")}
+                              label="My favorites"
                             />
                             <MenuItem
                               onClick={() => router.push("/reservations")}
