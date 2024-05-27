@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Airbnb Clone
 
-## Getting Started
+A full-stack application replicating the popular vacation rental platform, Airbnb, built with Next.js and other modern technologies.
 
-First, run the development server:
+## Important links
+- **[Application link](https://airbnb-krish-anands-projects.vercel.app/)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Technologies & Libraries
+- **Next.js** for the frontend and backend.
+- **Cloudinary** for image storage and management.
+- **Tailwind CSS** for styling.
+- **Prisma** as the ORM.
+- **MongoDB** as the database.
+- **NextAuth** for authentication.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 💻 Local Setup
+### Prerequisites
+- Ensure you have Node.js and npm installed.
+- Set up a MongoDB instance. You can use MongoDB Atlas for a free cloud database.
 
-## Learn More
+### Setup Instructions
+1. Clone the repository
+    ```sh
+    git clone https://github.com/your-username/airbnb-clone.git
+    cd airbnb-clone
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Create a file `.env` in root directory.
+3. Set up the following environment variables in `.env` file:
+    - `DATABASE_URL` with your MongoDB connection string.
+    - `NEXTAUTH_SECRET` with a random string for securing NextAuth.
+    - `NEXTAUTH_URL` with your Next.js URL.
+    - `CLOUDINARY_URL` with your Cloudinary URL.
+    - `GITHUB_ID` with your GITHUB_ID.
+    - `GITHUB_SECRET` with your GITHUB_SECRET.
+    - `GOOGLE_CLIENT_ID` with your GOOGLE_CLIENT_ID.
+    - `GOOGLE_CLIENT_SECRET` with your GOOGLE_CLIENT_SECRET.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+4. Install dependencies using
+    ```sh
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Set up the database schema using Prisma
+    ```sh
+    npx prisma migrate dev --name init
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. Run the application locally using
+    ```sh
+    npm run dev
+    ```
+
+## Features
+- **User Authentication**: Sign in and log out with ease using Github, Google, and there own credentials.
+- **Property Listings**: Users can list their properties for rental.
+- **Booking**: Book available properties for your stay.
+- **Favorites**: Add properties to your list of favorites.
+- **Booked Trips**: View a list of all your booked trips.
+- **Filters**: Filter properties by countries and number of guests.
+
+## Contributing
+We welcome contributions from the community! To contribute, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch
+    ```sh
+    git checkout -b feature/[feature-title]
+    ```
+3. Make your changes and commit them
+    ```sh
+    git commit -am 'Add brief meaningful commit message'
+    ```
+4. Push to the branch
+    ```sh
+    git push origin feature/[feature-title]
+    ```
+5. Create a new Pull Request.
