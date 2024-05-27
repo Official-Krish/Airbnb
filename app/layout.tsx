@@ -8,6 +8,7 @@ import LoginModal from "./components/Modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
 import { RentModal } from "./components/Modals/RentModal";
 import SearchModal from "./components/Modals/SearchModal";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,11 +29,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        
+        <Suspense>
         <Navbar currentUser={currentUser}/>
         <RegisterModal/>
         <LoginModal/>
         <SearchModal/>
         <RentModal/>
+        </Suspense>
         <div className="pb-20 pt-28">
           {children}
         </div>
