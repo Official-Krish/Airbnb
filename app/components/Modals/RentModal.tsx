@@ -15,6 +15,7 @@ import Input from "../inputs/Input";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 
 
@@ -64,7 +65,7 @@ export const RentModal = () => {
         dynamic(() => import("../Map"), {
           ssr: false
         }), 
-        [location]
+        []
       );
 
       const setCustomValue = (id: string, value: any) => {
@@ -185,7 +186,7 @@ export const RentModal = () => {
             <Heading title="Add a photo of your place" subtitle="Show guests what your place looks like!" />
             <ImageUpload value={imageSrc} onChange={(value) => setCustomValue('imageSrc', value)} />
             {imageSrc && (  // Check if imageSrc has a value before rendering the image
-            <img src={imageSrc} alt="Preview of uploaded image" />
+            <Image src={imageSrc} alt="Preview of uploaded image" />
             )}
             {!imageSrc && <p>No image uploaded yet.</p>}
           </div>
